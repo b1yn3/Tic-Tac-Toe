@@ -1,3 +1,11 @@
+:root{
+    --bg-color: #5C4033;
+    --grid-color: #8B6F47;
+    --main-color: #9C7B5A;
+    --O-color: #e76f51;
+    --X-color: #2a9daf;
+
+}
 
 *{
     margin: 0;
@@ -10,13 +18,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--bg-color);
 }
 
 main {
     margin-top: 100px;
     width: 490px;
     height: 490px;
-    background-color: brown;
+    background-color: var(--main-color);
+    border-radius: 20px;
+    overflow: hidden; 
 }
 .parent {
 display: grid;
@@ -32,18 +43,18 @@ grid-row-gap: 20px;
 }
 
 .div1 { grid-area: 1 / 1 / 2 / 2; 
-background-color: red;}
+background-color: var(--grid-color);}
 .div2 { grid-area: 1 / 2 / 2 / 3;
-background-color: pink;}
+background-color: var(--grid-color);}
 .div3 { grid-area: 1 / 3 / 2 / 4; 
-background-color: red;}
+background-color: var(--grid-color);}
 .div4 { grid-area: 2 / 1 / 3 / 2; 
-background-color: red;}
+background-color: var(--grid-color);}
 .div5 { grid-area: 2 / 2 / 3 / 3; 
-background-color: red;}
+background-color: var(--grid-color);}
 .div6 { grid-area: 2 / 3 / 3 / 4; 
-background-color: red;}
+background-color: var(--grid-color);;}
 .div7 { grid-area: 3 / 1 / 4 / 2; 
-background-color: red;}
-.div8 { grid-area: 3 / 2 / 4 / 3; background-color: red;}
-.div9 { grid-area: 3 / 3 / 4 / 4; background-color: red;}
+background-color: var(--grid-color);}
+.div8 { grid-area: 3 / 2 / 4 / 3; background-color: var(--grid-color);}
+.div9 { grid-area: 3 / 3 / 4 / 4; background-color: var(--grid-color);}
