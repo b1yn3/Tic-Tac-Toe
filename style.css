@@ -40,6 +40,18 @@ grid-row-gap: 20px;
 .parent div{
     width: 150px;
     height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parent > div > button{
+    width: 85%;
+    height: 85%;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 7cqw;
 }
 
 .div1 { grid-area: 1 / 1 / 2 / 2; 
