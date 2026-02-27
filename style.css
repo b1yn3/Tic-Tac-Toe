@@ -54,6 +54,12 @@ grid-row-gap: 20px;
     font-size: 7cqw;
 }
 
+.parent > div > button:disabled{
+    cursor: not-allowed;
+    opacity: 1;
+    color: inherit;
+}
+
 .div1 { grid-area: 1 / 1 / 2 / 2; 
 background-color: var(--grid-color);}
 .div2 { grid-area: 1 / 2 / 2 / 3;
