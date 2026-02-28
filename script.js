@@ -3,7 +3,8 @@ function createGame(){
     let currentPlayer = "X";
     const board = Array(9).fill(null);
 
-    function checkForWin() {
+    // Checking possible wins by listing all the possible wins and comparing it to the board
+    function checkIfThereIsAWin() {
         const winList = [
             [0, 1, 2],
             [3, 4, 5],
@@ -15,15 +16,16 @@ function createGame(){
             [2, 4, 6]
         ]
 
-        for(const win of winList){
-            if(board[win[0]] === currentPlayer && board[win[1]] === currentPlayer && board[win[2]] === currentPlayer){
-                console.log("WIN");
+        for(const line of winList){
+            if(board[line[0]] === currentPlayer && board[line[1]] === currentPlayer && board[line[2]] === currentPlayer){
+                winner();
             }
         }
 
     }
 
-    function handleMove(button, index){
+    function handleMoveOfPlayer(button, index){
+        console.log(currentPlayer);
         board[index] = currentPlayer;
         if(currentPlayer === "X") {
             button.style.color = "#2a9daf";
@@ -32,16 +34,21 @@ function createGame(){
         }
         button.textContent = currentPlayer;
         button.disabled = true;
-
-        checkForWin();
-
+        checkIfThereIsAWin();
+        
         currentPlayer = currentPlayer === "X" ? "O" : "X";
+    }
+
+    // feed back for who the winner is 
+    // To do: add a reset and a visual feedback for the outcome
+    function winner(){
+        console.log(`The winner is ${currentPlayer}`)
     }
 
     function startGame(){
         buttons.forEach((button, index) => {
         button.addEventListener('click', function () {
-            handleMove(button, index);
+            handleMoveOfPlayer(button, index);
         });
 
     });
