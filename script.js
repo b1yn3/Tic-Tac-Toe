@@ -46,7 +46,12 @@ function createGame(){
     // feed back for who the winner is 
     // To do: add a reset and a visual feedback for the outcome
     function winner(){
-        console.log(`The winner is ${currentPlayer}`)
+        document.getElementById('currentEvent').textContent = "GOOD GAME!";
+        buttons.forEach(function(button){
+            
+            button.disabled = true;
+        })
+        
     }
 
     function resetGame(){
