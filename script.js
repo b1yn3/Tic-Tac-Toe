@@ -45,6 +45,18 @@ function createGame(){
         console.log(`The winner is ${currentPlayer}`)
     }
 
+    function resetGame(){
+        currentPlayer = "X";
+        for(let i =0; i < board.length; i++){
+            board[i] = null;
+        }
+
+        buttons.forEach(function(button){
+            button.textContent = "";
+            button.disabled = false;
+        })
+    }
+
     function startGame(){
         buttons.forEach((button, index) => {
         button.addEventListener('click', function () {
@@ -55,10 +67,16 @@ function createGame(){
     }
 
     return {
-        startGame
+        startGame,
+        resetGame
     };
 }
 
 const game = createGame();
 game.startGame();
+
+function restartGame(){
+    
+    game.resetGame();
+}
 
