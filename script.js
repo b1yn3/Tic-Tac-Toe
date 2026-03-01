@@ -1,6 +1,7 @@
 function createGame(){
     const buttons = document.querySelectorAll('.parent button');
     let currentPlayer = "X";
+    let count = 0;
     const board = Array(9).fill(null);
 
     // Checking possible wins by listing all the possible wins and comparing it to the board
@@ -19,13 +20,17 @@ function createGame(){
         for(const line of winList){
             if(board[line[0]] === currentPlayer && board[line[1]] === currentPlayer && board[line[2]] === currentPlayer){
                 winner();
+            } else if(count === 9){
+                document.getElementById('currentEvent').textContent = "Tie!";
             }
         }
+
+
 
     }
 
     function handleMoveOfPlayer(button, index){
-        console.log(currentPlayer);
+        count++;
         board[index] = currentPlayer;
         
         if(currentPlayer === "X") {
