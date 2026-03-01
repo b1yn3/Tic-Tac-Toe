@@ -61,6 +61,7 @@ function createGame(){
 
     function resetGame(){
         currentPlayer = "X";
+        count = 0;
         document.getElementById('currentEvent').textContent = "Player 1's Turn";
         for(let i =0; i < board.length; i++){
             board[i] = null;
