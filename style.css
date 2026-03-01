@@ -37,7 +37,7 @@ header{
     font-weight: bold;
 }
 
-.currentEvent {
+#currentEvent {
     font-size: 32px;
 
 }
