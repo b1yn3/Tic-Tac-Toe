@@ -27,9 +27,13 @@ function createGame(){
     function handleMoveOfPlayer(button, index){
         console.log(currentPlayer);
         board[index] = currentPlayer;
+        
         if(currentPlayer === "X") {
             button.style.color = "#2a9daf";
+            document.getElementById('currentEvent').textContent = "Player 2's Turn";
         } else {
+            document.getElementById('currentEvent').textContent = "Player 1's Turn";
+
             button.style.color = "#e76f51";
         }
         button.textContent = currentPlayer;
@@ -47,6 +51,7 @@ function createGame(){
 
     function resetGame(){
         currentPlayer = "X";
+        document.getElementById('currentEvent').textContent = "Player 1's Turn";
         for(let i =0; i < board.length; i++){
             board[i] = null;
         }
